@@ -1,0 +1,49 @@
+% CREATED BY MAGNUS GUSTAVER, 2020
+An Informative Headline describing the Content of the Report\\
+A Subtitle that can be Very Much Longer if Necessary\\
+NAME FAMILYNAME\\
+Department of Some Subject or Technology\\
+Chalmers University of Technology\\
+\if\InstitutionLocation G
+University of Gothenburg\\
+\fi
+\setlength{\parskip}{0.5cm}
+
+\thispagestyle{plain}			% Supress header 
+\setlength{\parskip}{0pt plus 1.0pt}
+\section*{Abstract}
+
+\begin{itemize}
+    \item ll - start/stop compiling the document, turns on auto compilation.
+    \item lk - stop compilation process. 
+    \item lc - clear auxiliary files 
+    \item lv - forward search, will open compiled pdf. Some pdf viewers support the ability to jump to the current location in the pdf. 
+    \item le - open/close quickfix window. Pressing enter on the error moves the cursor to the line containing the error. 
+    % TODO guess this works? Also possible to use
+    \todo{To create a visible todo-note}
+    \item lt - open table of contents for the file. Includes section, labels, references, and TODOs. 
+    \item [[, [], ][, ]] - move between section boundaries. 
+    \item { - move to previous empty line, } to the next. 
+    \item \% - move to next/matching bracket. 
+    \item ic - excludes the backslash of latex commands. 
+    \item ac - includes the backslash of latex commands. 
+    \item cse - change surrounding environment, e.g. align to equation. 
+    \item tsd - toggles between () and \( \left( \right) \) in enviroments.
+    \item tse - toggles the \* in enviroments.
+    \item c - change 
+    \item d - delete 
+    \item :help vimtex - open the help page
+
+\end{itemize}
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+% KEYWORDS (MAXIMUM 10 WORDS)
+\vfill
+Keywords: lorem, ipsum, dolor, sit, amet, consectetur, adipisicing, elit, sed, do.
+
+\newpage				% Create empty back of side
+\thispagestyle{empty}
+\mbox{}
