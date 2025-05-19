@@ -1,2 +1,148 @@
 % CREATED BY MAGNUS GUSTAVER, 2020
 \chapter{Methods}
+\section{Pipeline 1}
+% TODO: All methods used:
+% Download Data: 
+% - bash: ena browser
+% Pipeline 1:
+% Annotation Pipeline:
+% - TrimGalore! - Trims
+%   - MultiQC - Generates a report of the trim-results (it's own pipeline but eh)
+% - MetaxaQR - Annotation? SSU/LSU
+%   - MetaxaQR_ttt - Taxonomic traversal tool - outputs number of identified SSU/LSU sequences associated with eac node in the taxonomic tree, at different levels (roughly corresponding to kingdoms, phyla, classes, orders, families, genera, species, subspecies, et.c. (We only use first six, down to ~Genus).
+%   - MetaxaQR_dc - Data Collector - merges the output of several *.level_X.txt files from _ttt into one large abundance matrix.
+% - Diamond - Not used?
+%   - Gene Normalization - Not used?
+% Create_DB Pipeline:
+% - Build_resfinder_db: Only used for Diamond?
+% - Build_mobileOG_db: Only used for Diamond?
+% 
+% Stuff done: 
+% - TrimGalore! - Trims - version v0.12.2
+%   trim_galore --paired -e 0.1 -j ${task.cpus} --phred33 -q 28 --fastqc ${reads[0]} ${reads[1]}
+%   - MultiQC - Generates a report of the trim-results (it's own pipeline but eh) - version 1.18 
+%     multiqc -f ${params.trimgalore_path}*fastqc.zip
+% - MetaxaQR - Annotation? SSU/LSU - version 3.0 b3
+%   metaxaQR -1 read_R1.fastq -2 read_R2.fastq -o ${sample_id}_${params.run_id} --cpu ${task.cpus} -g SSU -d /MetaxaQR/metaxaQR_db/SSU/mqr
+%   - MetaxaQR_ttt - Taxonomic traversal tool - outputs number of identified SSU/LSU sequences associated with eac node in the taxonomic tree, at different levels (roughly corresponding to kingdoms, phyla, classes, orders, families, genera, species, subspecies, et.c. (We only use first six, down to ~Genus).
+%    metaxaQR_ttt -i ${genus_files} -o ${sample_id}_${params.run_id}  -m 6
+%   - MetaxaQR_dc - Data Collector - merges the output of several *.level_X.txt files from _ttt into one large abundance matrix.
+%     metaxaQR_dc *.level_6.txt
+%
+% LaTeX:
+% - Boxplots
+% - Wilcoxon test
+% - Microeco
+%   - LEfSe - Not used?
+%   - RandomForest
+
+% TODO: Other things to mention in method
+% - Where data is from
+% - CARD
+% - Number of samples of each type
+
+% TODO VERSION AV PROGRAMMET BROR, se ovan
+% TODO options? in brackets?
+
+The data included in this study was downloaded from the European Nucleotide Archive (ENA) at EMBL-EBI\cite{embl-ebi2025ENABrowser}. The full list of all 16 studies may be found in Appendix \ref{appendix:studies}. 
+In each study only the data from metagenomic analyses was included, the full list of samples may be found in Supplementary Information \todo{or appendix, the excel file with metadata}.
+
+A total of 395 samples from 53 different locations was analyzed in this study. These come from 16 different studies, all except one published in the last four years. The full list of all 16 studies may be found in Appendix \ref{appendix:studies}. 
+Figure \ref{world_map} show the location of the samples in red. 
+The samples originate from the Pacific Ocean, along the east coast of the United States, in Europe, Australia, Japan, and China. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \textwidth]{figure/map.png}
+    \caption{Map showing the location of all samples in red}
+    \label{world_map}
+\end{figure}
+
+The samples were divided into three groups, based on their substrate type as shown in table \ref{substrate_sampletype}. The water group included freshwater, seawater, and wastewater samples, the plastic group included 26 different plastics, and the non-plastic group consisted of nine different substrates, such as glass, wood, and sediment.
+
+In order to filter the data to remove low-quality reads \todo{what else?} as well as annotate the genomes, an in house pipeline was used\cite{wenne2025Pipeline1}. 
+To filter the reads Trim Galore! (v.0.12.2) \cite{krueger2023TrimGalore0122} was used, which does adapter and quality trimming. It uses FastQC for the quality filtering and Cutadapt for the adapter removal. \todo{more?}
+The result of the trimming was checked by visualizing the output of the trimming and filtering step using MultiQC\cite{ewels2016MultiQCSummarizeAnalysis}, which outputs an html file containing summarized results for all the samples. \todo{more?}
+
+% --paired - performs length trimming of quality/adaper trimmed reads for paired-end files. 
+           % To pass the validation test, both sequences of a pair are required to have minimum length defined.
+% -e 0.1 - error rate of 0.1, number of errors divided by length of matching region. DEFAULT
+% --phred33 - uses ASCII+33 quality scores as phred scores. DEFAULT
+% -q 28 - Trim low-quality ends from reads in addition to adapter removal. Minimum quality of 28.
+% --fastqc - Run fastQC in default mode on the fastq file once trimming is done.
+
+After the trimming step, the remaining DNA was annotated using MetaxaQR (v. 3.0 b3)\cite{bengtsson-palme2015Metaxa2Improved}. This tool screens the input sequences for conserved regions of the SSU/LSU gene using hidden Markov Models. These models are based on rRNA sequences from the SILVA database\cite{quast2012SILVARibosomalRNA} \todo{skip hmm?}
+    A BLAST search \cite{camacho2009BLASTArchitectureApplications} is then done on the sequences which are found to contain rRNA genes, against a specialized database crafted by the creators of MetaxaQR from release eleven of the SILVA database \cite{quast2012SILVARibosomalRNA} and release ten of Mitozoa\cite{donoriodemeo2012MitoZoa20Database}. They have crosschecked the entries with data from Greengenes, CRW, and GenBank. \todo{Too much? stop after "crafted by the creators of MetaxaQR"?}
+The taxonomic annotations are then collected by MetaxaQR Taxonomic Traversal Tool and MetaxaQR Data Collector, which finally outputs one large abundance matrix containing the results from all samples down to the Genus level. 
+
+
+\section{MuMaMe}
+In order to idenify the point mutations present in the samples, the tool MuMaMe (v. 1.0b)\cite{magesh2019MumameSoftwareTool} was used. MuMaMe consists of two tools, MuMaMe\_build and MuMaMe. 
+The first tool builds a database of point mutations based on the Comprehensive Antibiotic Resistance Database (CARD) \cite{alcock2023CARD2023Expanded}. In this study the latest version (4.0.0) of CARD was used.
+MuMaMe\_build uses a FASTA sequence file (protein\_fasta\_protein\_variant\_model.fasta) and a list of mutations (snps.txt) to extract sequence excerpts from the fasta file. It creates one wildtype version and at least one mutated version of the sequence, where if there are several possible mutations close to each other it creates every possible combination of these mutations in addition to the wildtype version. 
+The default value, which was used, is to extract 20 residues upstream and downstream of the mutation. 
+A maximum depth of 16 was used instead of the default 12. This value limits the maximum amount of mutations that are combined to create the database entries, 
+meaning that if there are sufficiently many mutations close to each other not all possible combinations of thse will be included in the databasee.
+
+MuMaMe uses the database created by MuMaMe\_build and a fastq file, which in this study was the trimmed, filtered and validated files from Trim Galore!.\todo{Weird med punktuationen här, \emph{italics?}} MuMaMe auto-detects the other file of the paired-end read and uses both at the same time. It uses usearch\cite{edgar2010SearchClusteringOrders} to map each sequence in the input files to a sequence in the database. Using a best-hit strategy, it can assign the read to either a wildtype sequence or a mutated sequence with higher certainty, since the entries in the database it built will contain both versions of every sequence. \todo{"can map to exactly one of them"?}
+MuMaMe outputs a matrix with the number of hits for the mutated and wildtype version of each point mutation, from each sample.
+This file was then used in further analysis in a Jupyter Notebook, available on \href{TODO: add link to notebook}{GitHub} 
+
+\section{Jupyter Notebook}
+In the jupyter notebook, additional files will be used in combination with the results from MuMaMe. These include snps.txt and aro-index.tsv from the CARD\todo{weird}, as well as a tsv-file containing metadata for all the samples. The first two will be used to label the point mutations with their corresponding resistance mechanism, drug class and AMR gene family, while the last will be used to label the samples.
+
+The CARD contain some duplicates, which come from different sources. We are not interested in this distinction so only the first one is kept. 
+
+Additionally, CARD contain some mis-labellings, which mean that some mutation positions seem to be written to occur outside the gene region.
+This issue stems from that the wrong sequence was added to the database in one case and that the original publication of the other mutations published nucleotide substitutions, which got mistaken for amino acid substitutions.
+The curators of the database are aware of this issue\cite{alcockLengthDiscrepancyProtein}.
+MuMaMe is unable to handle these erroneous positions and discards them.
+
+Some mutations can't be labelled by the metadata, since they are not present in CARD in the unique combination which was found in the sample. 
+For example, if the mutations A12D and Y16S are present in CARD individually, but the combination of them was found in a sample. In these cases the metadata for another mutation in the same gene was used, which may be justified by them sharing the same accession number in the database. \todo{Förklara bättre? Att det är andra mutationer i samma gen som har samma accession?}
+\todo{Göra något med accession = 1, eller bara skippa det?}
+For example, if the above mutations are marked as being mutations in "Mycobacterium tuberculosis embC mutant conferring resistance to ethambutol", they get the same accession number as the other mutations with the same description. 
+The mutations for which labelling of this kind was done, was later assigned an accession number of 1 instead of their usual accesssion number, in order to be identified, but otherwise not disturb the analysis. 
+%todo{En mutation utan någon annan liknande? Oklart var den fanns, hitta den? Tror löst?}
+
+%todo{MOVE BOXPLOTS in code to above randomForest?}
+\section{Statistical analysis}
+Statistics could be part of theory, but feels more at home in method? Unsure.
+\begin{itemize}
+    \item Boxplots
+        \begin{itemize}
+            \item Samples
+            \item Mutations
+            \item Sampletype/substrate
+            \item Study and Coords - mention but no results?
+            \item Ecosystem - mention but no results?
+        \end{itemize}
+    \item Wilcoxon test
+        \begin{itemize}
+            \item Pseudo-mean
+            \item Paired or not
+        \end{itemize}
+    \item Random Forest
+        \begin{itemize}
+            %\item "Permuting a useful variable, tend to give relatively large decrease in mean gini-gain. GINI importance is closely related to the local decision function, that random forest uses to select the best available split. Therefore, it does not take much extra time to compute. On the other hand, mean gini-gain in local splits, is not necessarily what is most useful to measure, in contrary to change of overall model performance. Gini importance is overall inferior to (permutation based) variable importance as it is relatively more biased, more unstable and tend to answer a more indirect question" - see https://stats.stackexchange.com/questions/197827/how-to-interpret-mean-decrease-in-accuracy-and-mean-decrease-gini-in-random-fore
+            \item Note: high meanDecreaseMini is not the same as high or low abundance of it, just that something "in it" can help you determine that the taxa is NOT in the group of interest. The real abundance can be higher or lower in the group of interest, or be unstable while the reference is more stable.
+            \item Filtered so only those with 3 or more samples are kept. Otherwise easier to predict them since fewer?
+        \end{itemize}
+    \item Weird point-plot, see fig \ref{pointplot_mutations}
+        \subitem Use it or not? Kinda relevant
+    \item Taxonomic Abundance - mention above after metaxaQR?
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
