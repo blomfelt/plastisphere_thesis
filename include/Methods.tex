@@ -107,7 +107,60 @@ The mutations for which labelling of this kind was done, was later assigned an a
 
 %todo{MOVE BOXPLOTS in code to above randomForest?}
 \section{Statistical analysis}
-Statistics could be part of theory, but feels more at home in method? Unsure.
+\todo{Statistics could be part of theory, but feels more at home in method? Unsure.}
+
+The statistical analyses, except the analysis of the number of hits, are based on the relative mutation frequency, where the hits from the mutated version of the gene is divided by the number of wildtype hits. 
+This gives you number between zero and one, which signifies how present the mutation is in your samples.
+Since MuMaMe gives you both values you can use this value instead of scaling the hits to the total read count. 
+
+The following analyses will also use the mean mutation percentage, for either the samples or mutations, which are calculated by grouping the relative mutation frequency by the sample type or substrate, and then by either the sample name or the description name. 
+A mean is then taken for each such group, where one may get the result in table \ref{example_mean_table}. This table show the relative mutation frequency for two samples, X and Y, for two different mutations, A and B. 
+The mean mutation percentage of the two samples are different, 3\% and 11\%, while the mean mutation percentage for the mutations are the same, 7\%.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+    \caption{Example of the calculation of the mean mutation percentage for the samples and mutations respectively}
+    \label{example_mean_table}
+\begin{tabular}{@{}lll|l@{}}
+\toprule
+               & Mutation A & Mutation B & Mean samples \\ \midrule
+Sample X       & 0.02       & 0.04       & 0.03         \\
+Sample Y       & 0.12       & 0.10       & 0.11         \\ \midrule
+Mean mutations & 0.07       & 0.07       &              \\ 
+\bottomrule 
+\end{tabular}
+\end{table}
+
+\section{Wilcoxon test}
+The statistical analysis of the mean mutation percentage uses the Wilcoxon signed-rank test between the mean mutation percentages for the mutations, and the Wilcoxon rank-sum test between the mean mutation percentage of the samples. 
+This difference comes from the fact the genes may be considered paired, they have a data point in each sample, which may be zero, while the samples cannot be paired since there are differing number of samples in each substrate type.
+
+%The Wilcoxon signed-rank test converts the measurement, in our case the mean mutation percentage, to a real number and then calculates the difference between the two paired measurements.
+The Wilcoxon signed-rank test calculates the difference between the two paired measurements, in our case the mean mutation percentage, and assigns them a rank based on the absolute value of this difference, starting with the smallest.
+The sign of the original difference is kept as the sign of the rank, i.e. if the differences are 5, -7, and 10, the rank numbers are 1, -2, and 3. 
+The rank numbers of the two signs are then summed individually. The smaller of these two sums are compared to it's distribution under the null hypothesis, that the distribution is symmetric around $\mu = 0$, from which one then get the p-value for the comparison\cite{wilcoxon1945IndividualComparisonsRanking}.
+
+In the analysis, the pseudomean is used to determine the direction of change for the mutation percentage. This pseudomean is not the real pseudomean but instead an estimator for the difference of the location parameters x and y. It estimates the median of the difference between a sample from x and one from y, it does not estimate the difference between the means \cite{thercoreteamWilcoxtestWilcoxonRank}.
+% It does not estimate the difference of the means, but instead the median of the difference between a sample from x and a sample from y.
+
+%W = 2
+%u = 3 ( 3 + 1 )/ 4 = 3
+%s = sqrt( (12*7)/24 ) = 1.87
+% --> p-value of 0.6
+
+For the Wilcoxon rank-sum test, the ranks are instead assigned to the values themselves, with the smallest value being assigned the lowest rank. If there are ties the mean rank value is used. The ranks are then summed individually for the two groups, and the value $U$ is calculated for each group according to equation \eqref{equation:wilcox_ranksum}, where $R_i$ is the rank sum of group $i$, and $n_i$ is the number of observations in group $i$.
+
+\begin{equation}
+    \label{equation:wilcox_ranksum}
+    U_i = R_i - \frac{n_i \left( n_i + 1 \right)}{2}
+\end{equation}
+The smaller of these values of $U$ is then used to get the p-value from the significance table. 
+
+\section{Random Forest}
+
+
+\section{TODO}
 \begin{itemize}
     \item Boxplots
         \begin{itemize}
@@ -119,7 +172,7 @@ Statistics could be part of theory, but feels more at home in method? Unsure.
         \end{itemize}
     \item Wilcoxon test
         \begin{itemize}
-            \item Pseudo-mean
+            \item[x] Pseudo-mean
             \item Paired or not
         \end{itemize}
     \item Random Forest
