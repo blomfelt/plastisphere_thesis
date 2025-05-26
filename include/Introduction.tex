@@ -1,16 +1,59 @@
 % CREATED BY MAGNUS GUSTAVER, 2020
 \chapter{Introduction}
-"AMR is bad and sad"
+%"AMR is bad and sad"
 
-Base it on the project plan
+Antibiotic resistance is one of the top threats to human health according to the WHO\cite{worldhealthorganization2023AntimicrobialResistance}, and bacterial antimicrobial resistance (AMR) is estimated to have caused 1.14 million deaths in 2021 \cite{naghavi2024GlobalBurdenBacterial}. 
+It is estimated that by the year 2050, resistant infections could be associated \todo{note ASSOCIATED with, only 1.91 million attributable to} with more than 8 million deaths anually\cite{naghavi2024GlobalBurdenBacterial}.
 
-Social/ethical considerations??
+%Pathogens can confer antibiotic resistance by horizontal gene transfer (HGT) or chromosomal mutations, and
+%TODO: why point mutations, not well studied?
+Microplastics have been shown to enrich potentially pathogenic bacteria that carry a great number of antibiotic resistance genes (ARGs)\cite{liu2021MicroplasticsAreHotspot, wu2019SelectiveEnrichmentBacterial}.
+Microplastics are present in soil, marine and freshwater ecosystems and has been recognized as an important source of pollution \cite{ziani2023MicroplasticsRealGlobal},
+which highlights the need for a deeper understanding of the mechanisms by which AMR is caused by these particles in order for the threat of antibiotic resistant infections to be mitigated. 
 
-\section{Background}
+\todo{Mention plastisphere?? In aim potentially?}
 
-\section{Purpose}
+% AMR bad
+% - Why?
+% - How?
+% Plastics increase AMR
+% - How?
+% - Why more plastics?
+% Plastisphere - in theory instead?
 
-\section{Goals}
+%Base it on the project plan
+
+%Social/ethical considerations?? Only in planning report? Should be motivated in the planning report?
+
+%\section{Background} \todo{Skip this? Instead use theory as background?}
+
+\section{Aim} %Renamed from purpose
+The aim of the project is to use publically available metagenomic data in order to assess the presence of ARGs in the plastisphere and identify specific point mutations which can lead to decreased susceptibility of bacteria to antibiotics.
+To do so, bioinformatic methods will be used to screen for antibiotic resistance genes in microorganims which colonize microplastics, and compare with those which inhibit the surrounding water as well as other natural and non-natural substrates.
+
+\todo{Add hypothesis?}
+
+The main bionformatic tool used in this study, called MuMaMe\cite{magesh2019MumameSoftwareTool}, was specifically developed to detect such genetic changes. 
+The findings from the current project could aim in enhancing the current knowledge regarding AMR, as well as improve the ability for us to monitor the presence of AMR in the future. 
+
+% - Public metagenomic data
+% - Examine the presence of ARGs in the plastisphere, which can lead to resistance
+% - Screen microorganims which colonize microplastics, and compare to surrounding water and non-plastic substrates: wood/glass
+% - Estimate point mutations of plastisphere bacteria, compare to ...
+% Use MuMaMe, specifically developed to detect such genetic changes
+
+% Findings could aid in enhancing the current knowledge regarding AMR, as well as enable us to monitor the presence of AMR in the future.
+
+%\section{Goals} % Include in Aim?
 
 \section{Limitations / Demarcations}
+% - Only used CARD as databse, only those present in it
+The ARGs analyzed are a part of version 4.0.0 of the Comprehensive Antibiotic Resistance Database (CARD)\cite{alcock2023CARD2023Expanded}, released in December 2024. This limits the results to only include genes present in that database, however it is the preferable choice of database for the study of resistance genes and mutations\cite{papp2022ReviewComparisonAntimicrobial}.
+The tool MuMaMe only looks at amino acid substitutions (missense mutations), and not insertions/deletions (frameshift mutations) or terminations (nonsense mutations)\cite{liu2024Chapter106Virus}. 
+%The tool MuMaMe only searches and matches reads to point mutations which , and not deletions, insertions or terminations. 
+\todo{Keep this about mumame?}% Refer to something that it is most important for }
 
+%which were screened for was accesesd from the Comprehensive Antibiotic Resistance Database (CARD)\cite{alcock2023CARD2023Expanded}.
+%The database for the point mutations which were to be screened for in the samples  
+
+%Limitations of the project include the amount of data, which was 

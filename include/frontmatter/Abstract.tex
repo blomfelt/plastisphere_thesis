@@ -13,36 +13,66 @@ University of Gothenburg\\
 \setlength{\parskip}{0pt plus 1.0pt}
 \section*{Abstract}
 
-\begin{itemize}
-    \item ll - start/stop compiling the document, turns on auto compilation.
-    \item lk - stop compilation process. 
-    \item lc - clear auxiliary files 
-    \item lv - forward search, will open compiled pdf. Some pdf viewers support the ability to jump to the current location in the pdf. 
-    \item le - open/close quickfix window. Pressing enter on the error moves the cursor to the line containing the error. 
-    % TODO guess this works? Also possible to use
-    \todo{To create a visible todo-note}
-    \item lt - open table of contents for the file. Includes section, labels, references, and TODOs. 
-    \item [[, [], ][, ]] - move between section boundaries. 
-    \item { - move to previous empty line, } to the next. 
-    \item \% - move to next/matching bracket. 
-    \item ic - excludes the backslash of latex commands. 
-    \item ac - includes the backslash of latex commands. 
-    \item cse - change surrounding environment, e.g. align to equation. 
-    \item tsd - toggles between () and \( \left( \right) \) in enviroments.
-    \item tse - toggles the \* in enviroments.
-    \item c - change 
-    \item d - delete 
-    \item :help vimtex - open the help page
-    \item S - delete whole line and begin insert
-    \item s - delete character and begin insert
+% \begin{itemize}
+    % \item ll - start/stop compiling the document, turns on auto compilation.
+    % \item lk - stop compilation process. 
+    % \item lc - clear auxiliary files 
+    % \item lv - forward search, will open compiled pdf. Some pdf viewers support the ability to jump to the current location in the pdf. 
+    % \item le - open/close quickfix window. Pressing enter on the error moves the cursor to the line containing the error. 
+    % % TO-DO example of to-do-note, see also: 
+    % \item todo{To create a visible todo-note}
+    % \item lt - open table of contents for the file. Includes section, labels, references, and TODOs. 
+    % \item [[, [], ][, ]] - move between section boundaries. 
+    % \item { - move to previous empty line, } to the next. 
+    % \item \% - move to next/matching bracket. 
+    % \item ic - excludes the backslash of latex commands. 
+    % \item ac - includes the backslash of latex commands. 
+    % \item cse - change surrounding environment, e.g. align to equation. 
+    % \item tsd - toggles between () and \( \left( \right) \) in enviroments.
+    % \item tse - toggles the \* in enviroments.
+    % \item c - change 
+    % \item d - delete 
+    % \item :help vimtex - open the help page
+    % \item S - delete whole line and begin insert
+    % \item s - delete character and begin insert
+% 
+% \end{itemize}
+% 
+% 
+% \section{TODO}
+% \begin{itemize}
+    % \item Boxplots
+        % \begin{itemize}
+            % \item Samples
+            % \item Mutations
+            % \item Sampletype/substrate
+            % \item Study and Coords - mention but no results?
+            % \item Ecosystem - mention but no results?
+        % \end{itemize}
+    % \item[x] Wilcoxon test
+        % \begin{itemize}
+            % \item[x] Pseudo-mean
+            % \item[x] Paired or not
+        % \end{itemize}
+    % \item[x] Random Forest
+            % %\item "Permuting a useful variable, tend to give relatively large decrease in mean gini-gain. GINI importance is closely related to the local decision function, that random forest uses to select the best available split. Therefore, it does not take much extra time to compute. On the other hand, mean gini-gain in local splits, is not necessarily what is most useful to measure, in contrary to change of overall model performance. Gini importance is overall inferior to (permutation based) variable importance as it is relatively more biased, more unstable and tend to answer a more indirect question" - see https://stats.stackexchange.com/questions/197827/how-to-interpret-mean-decrease-in-accuracy-and-mean-decrease-gini-in-random-fore
+    % \item Weird point-plot, see fig \ref{pointplot_mutations}
+        % \subitem Use it or not? Kinda relevant
+    % \item Taxonomic Composition - mention above after metaxaQR?
+% \end{itemize}
+% 
+Antibiotic resistance is one of the top threats to human health, and bacterial antimicrobial resistance is estimated to have caused more than one million deaths in 2021. 
+Microplastics enrich potentially pathogenic bacteria, which carry a great number of antibiotic resistance genes. 
 
-\end{itemize}
+This work analyzes the metagenome of 395 samples from publically available data to identify point mutations which can lead to reduced susceptibility of bacteria to antibiotics. The focus lie one the presence of ARGs in the plastisphere and comparing it with the surrounding water, as well as the biofilm from other natural substrates. 
 
-
+The result is that plastics, in general, does not increase the presence of specific point mutations compared to water, but that specific plastic substrates such as polyvinyl chloride (PVC) and polyehtylene-fiber-polyethylene (PFP) does. 
+It is possible to identify specific substrates from the point mutations in them, but not plastic as a general group, meaning that different substrates induce different point mutations. 
+It was also found that plastic induce a non-specific increase in point mutations, potentially caused by oxidative stress from pollutants released by the microplastic particles.
 
 % KEYWORDS (MAXIMUM 10 WORDS)
 \vfill
-Keywords: lorem, ipsum, dolor, sit, amet, consectetur, adipisicing, elit, sed, do.
+Keywords: antibiotic resistance, plastisphere, point mutations, AMR, ARG, bioinformatics, mumame.
 
 \newpage				% Create empty back of side
 \thispagestyle{empty}

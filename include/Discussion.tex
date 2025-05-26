@@ -3,26 +3,187 @@
 
 % By analysing the number of point mutations which confer antiobiotic resistance, the result of which is shown in figure \ref{hits_type} and \ref{hits_substrate}, one may thus conclude that
 
+% From Máté:
+% - Start with a summary of 
+%   - what you did
+%   - what this project was about
+%   - what was the main question
+%   - what is you answer to the main question
+% - Then you could add a one-one key sentence from each important result section. 
+% - Thereafter you "zoom in" and elaborate more for all the sentences that you summarized in 
+%   the first paragraph.
+%   - And discuss your results, compare them with other findings, state whether the findings were surprising or not, if so, what could explain your observed patterns.
+% (also present below)
 
-Based on the result in figures \ref{hits_type} and \ref{hits_substrate} one may thus conclude that the number of point mutations which confer antibiotic resistance are not more prevalent on all plastics, but instead that specific plastic substrates increase this count.
-These substrates include PFP, Ecovio, and BI-OPL. The latter two are biodegradable plastics which contain a blend of PBAT and PLA. 
+% - No need to refer to figures in the discussion
 
-On the other hand, in figures \ref{mean_genes_sampletype} and \ref{mean_genes_substrate}, the result is that the mean mutation percentage is higher for the plastic group when one compares the mean mutation percentage for specific mutations. 
+%Project plan: 
+%- identify point mutations in plastisphere which can lead to altered susceptibility of bacteria to antibiotics
+%  (meta)genomic data of microorganisms which colonize microplastics will be screened for antibiotic resistance genes using the bioinformatic tool Mumame. 
+% - compare to natural substrates
+% x machine learning algorithm xgboost used to identify features that increase the likelilhood of point mutations.
 
-The combination of these 
-% seemingly diametrically opposed \todo{disparate? lmao eloquently spoken} 
-results means that plastic seems to increases the mutation prevalence for specific genes, but as a general promotor of accumulation of antibiotic resistant mutations.
+%The aim of this study was to identify if there were more point mutations on plastic substrates, and if so, which these were. 
 
-This claim is supported by the results shown in figure \ref{point_snps}, which show that there are mutations which are more prevalent on plastic substrates. However it may be noted that in this plot, the non-plastic substrates also exhibit a lot of mutations with a high mean mutation percentage, and that there are genes which are prevalent on all substrates.
+The aim of the study was to identify specific point mutations in the plastisphere which can lead to altered susceptibility of microorganisms to antibiotics. 
+In addition to this the levels of these specific point mutations were to be compared with those in microorganisms which inhibit water as well \todo{Should be "or" instead of "as well"? Since otherwise same organism for both? }as natural substrates.
+%In addition to this the levels of these specific point mutations were compared with those of the water surrounding the plastics.
+% Comparable water-samples
+To achieve this the point mutations present in samples from 35 different substrates
+%\todo{25 of which were plastics,} 
+were obtained, in addition to the amount of reads which map to each specific point mutation. This data could be used to calculate the relative amount of mutation for each point mutation in each sample by comparing the amount of reads which could be mapped to the mutated version of the gene with those matching the wildtype version of the gene. 
 
-The results from the random forest analysis show that one cannot easily distinguish the plastic samples from the nonplastic and water samples when grouped by the sample type.
-However, there are mutations which are found to be significant when grouped by substrate and may therefore be used to identify which substrate a sample comes from.
-One needs to be aware however that a high Mean Decrease of Gini Impurity does not mean that the mutation or AMR gene family has a higher abundance in the corresponding substrate, but only that the variable can be used to differentiate it. The actual abundance may be higher or lower than the reference group, the other substrates, but it does differ from the other substrates. \todo{It can also vary more or less than the reference? Find better reference to refer to}
+Based on this method, the result is that plastics in general does not increase the prevalence of specific point mutations compared to the water samples. 
+However, specific plastic substrates do increase the relative mutation percentage in the sample. 
+These substrates include polyvinyl chloride (PVC), polyethylene-fiber-polyethylene (PFP), Ecocio and BI-OPL.
+\todo{Keep full names of these or not? Many such cases below}
 
-\section{To-do}
-\begin{itemize}
-    \item Look at mutations, in what genes are they, what do they do? What the AMR Gene Family does I guess 
-\end{itemize}
+% Different substrates filter for/encourage/whataever det heter different mutations?
+It is possible to predict the identity of the substrates using the point mutations. This was done using the random forest algorithm which showed that among the plastic substrates, HDPE, PBSA, PHA, PFP, and PHBV has specific point mutations or AMR gene families which may be used to identify them.
+% HDPE, PBSAA, PHA for AMR Gene Families
+% PBSA, PFP, PHBV for point mutations
+
+% From Máté:
+% - Then you could add a one-one key sentence from each important result section. 
+% - Thereafter you "zoom in" and elaborate more for all the sentences that you summarized in 
+%   the first paragraph.
+%   - And discuss your results, compare them with other findings, state whether the findings were surprising or not, if so, what could explain your observed patterns.
+
+% READ PER MILLION
+More specifically, the analysis of the total number of reads mapped to each point mutations, per million reads, show that there is a higher amount of point mutations in the water samples than the plastic samples. 
+However, when the different substrates are compared there are plastic substrates with more mutations than the water substrates, which include PFP, Ecovio, BI-OPL, PHB, PF, PBAT and LDPE. Freshwater had higher significant mean than most other substrates.
+
+% SAMPLES
+When instead the mean mutation percentage is compared among the samples, the plastic group has a lower mutation rate than the water group. However, this comparison also show differences between the substrates, where PVC, PFP, LDPE, Ecovio, and BI-OPL have higher mean mutation percentage than seawater and wastewater. 
+
+% POINT MUTATIONS
+When the mean mutation rate of the individual point mutations are compared between the plastic and water group, the plastic group has a higher mean than the water group. 
+This is because the plastic samples contain many mutations the water samples do not
+%todo{reference, ingen bild för det? Skriva det i början där antal point mutations tas upp? Plast har minst en hit på 332 av 370 point mutations.}, 
+and therefore reduce the mean of the water samples accordingly since these will have a mutation rate of zero in the water samples.
+\todo{repeat:}When comparing the mean mutation percentage for the samples, the water group has a higher mean than the plastic group, while the opposite is the case when comparing between the individual point mutations. 
+This difference originates in that the water samples has a higher relative mutation percentage for some point mutations and lower for some when compared to the plastic samples. \todo{The overall mean mutation rate is therefore higher, "the mutation burden"?? is the same?}
+The plastic samples on the other hand has a higher mean mutation percentage per\todo{per? point mutation, on average? something ... higher mean?} point mutation. 
+This signifies that the plastic as a substrate in general doesn't promote any single point mutation, but that it enrich \todo{enriches?} them non-specifically.
+
+%This difference is not visible when comparing between the samples, since the mean mutation percentage is calculated per sample, and the point mutations with low mutation percentage will 
+
+% RANDOM FOREST
+The random forest analysis show that there are both AMR Gene Families and point mutations that are significant and may be used to predict the identify of specific substrates, however one cannot predict group association other than to the non-plastic group.
+Among the plastic substrates there are AMR Gene Families that can be used to predict HDPE, PBSA and PHA, and point mutations to predict PBSA, PFP, and PHBV.
+Both an AMR gene family and a point mutation could be used to distinguish freshwater from the other samples.
+One needs to be aware however that a high mean decrease of Gini impurity does not mean that the mutation or AMR gene family has a higher abundance in the corresponding substrate, but only that the variable can be used to differentiate it. The actual abundance may be higher or lower than the reference group, the other substrates, but it does differ from the other substrates. 
+%todo{It can also vary more or less than the reference? Find better reference to refer to}
+
+% Previous studies
+% Zhou et al. \cite{zhou2024MicroplasticBiofilmsPromote} show that antibiotic-resistance genes (ARGs) are more prevalent in the plastisphere, 
+% Goswami et al. \cite{goswami2025MicroplasticsHiddenDrivers}  
+
+
+% Obsidian-text: -----------------
+Previous studies show that the biofilm on microplastics \todo{the plastisphere} enrich ARGs compared to the surrounding water \cite{zhou2024MicroplasticBiofilmsPromote}, and that this biofilm is distinct from the microbiome of the surrounding water \cite{zadjelovic2023MicrobialHitchhikersHarbouring}. 
+Stevenson et al.\cite{stevenson2024SelectionAntimicrobialResistance} show that particularly microplastic particles of PS enrich AMR bacteria compared to non-plastic materials such as wood and glass. This falls in line with the result that different plastic substrates behave differently, altough the specific substrate in question was different.% between that study and this one.
+The main driving factor for the accumulation of ARGs in the plastisphere is horizontal gene transfer (HGT)\cite{goswami2025MicroplasticsHiddenDrivers} between microorganisms, and not mutation-induced resistance development.
+% This could reduce the selective pressure for point mutations, therefore reducing the amount of them that are present. \todo{ref?}
+% This could also explain the result of non-selective increase of point mutations, where environmental stresses increase the amount of point mutations non-selectively.
+Therefore, although the plastisphere selects for AMR-carrying bacteria, the method through which this resistance occur is not, in general, through specific point mutations caused by the plastic substrate.
+The small non-specific increase of point mutations on the plastic substrates could instead be due to oxidative stress caused by the pollutants accumulated in the particles or additives released by them\cite{forero-lopez2022PlastisphereMicroplasticsSitu, carvajal-garcia2023OxidativeStressDrives}.
+
+
+%From above: This signifies that the plastic as a substrate in general doesn't promote any single point mutation, but that it enrich \todo{enriches?} them non-specifically.
+%This may explain \todo{does it or not?} the 
+
+
+% - ALSO MENTION THE DIFFERENT ANTIBIOTICS OR GENES WHICH ARE MUTATED??
+% - FIX Label width in plots
+% 
+% the antibiotics in 22 resistances:
+% - fluoroquinolones
+% - rifampicin
+% - isoniazid
+% - pulvomycin
+% - rifabutin
+% - enacyloxin iia
+% - aminocoumarin
+% - fosfomycin
+% - vancomycin
+% - fusidic acid
+% 
+% genes: 
+% - parC
+% - gyrA
+% - gyrB
+% - rpoB
+% - katG
+% - EF-Tu
+% - parE
+% - ponA1
+% - soxS - system to counter oxidative stress
+% - UhpT
+% - rpoC
+% - fusA
+
+
+% "microplastics, particularly PS, enrich AMR bacteria and pathogens more than natural materials such as wood or inert substrates like glass". \cite{stevenson2024SelectionAntimicrobialResistance}
+
+% *However, one of the main driving factors in this accumulation is horizontal gene transfer (HGT)\cite{goswami2025MicroplasticsHiddenDrivers}, and not mutation-induced resistance development.*
+% Therefore, although the plastisphere selects for AMR-carrying bacteria, the method through which this resistance occur is not, in general, through point mutations caused by the plastic substrate. 
+% 
+% Novel resistances may be 
+% *Therefore, although the plastisphere selects for*
+% Mutation-induced resistance development
+
+
+% \cite{zadjelovic2023MicrobialHitchhikersHarbouring}:
+% The biofilms which grow on microplastics are similar to those which grow on wood, but distinct from the microbiome of the surrounding water. 
+% The same study also show that the set of ARG subtypes present in the plastisphere were distinct from the ones present in the water.
+% - They also mention which microbes and which ARGs are more prevalent in which place:
+	% - Plastisphere: those that confer resistance to maacrolides/lincosamines, rifamycin, sulfonamides, sulfonamides, disinfecting agents and glycopeptides.
+	% - Water: aminoglycosides, tetracycline, aminocoumarin, flouroquinolones, nitroimidazole, oxazolidinone and fosfomycin.
+% - 
+
+
+% Intressant för senare:
+% Metagenome Assemeled Genomes - MAG, linking ARGs and other virulence-related genes to their host.
+% - Escheria coli harboured more ARGs and virulence factors than any other MAG
+% --------------
+
+% Ref Máté sent: goswami2025MicroplasticsHiddenDrivers
+% [it] has an interesting section which you could use in your discussion to introduce the idea that even if MPs select for ARG-carrying microbes, it seems MPs do not necessarily promote mutation-induced resistance developments:
+% Compared to natural substrates such as particulate organic matter (POM), the plastisphere exhibits substantially enhanced capabilities for harboring and propagating AMR. The hydrophobic and persistent surfaces of microplastics promote stable biofilm formation, creating a favorable microenvironment for HGT of ARGs via conjugation, transformation, and transduction. This process is generally less efficient on biodegradable materials like POM. Zhou et al. (2024) reported that microplastic-associated biofilms contain more ARGs and MGEs than surrounding water or sediments, indicating selective enrichment within the plastisphere . Experimental findings by Stevenson et al. (2024) further confirmed that microplastics, particularly PS, enrich AMR bacteria and pathogens more than natural materials such as wood or inert substrates like glass . Similarly, Kaur et al. (2022) emphasized that biofilms on microplastics facilitate ARG transfer via HGT and serve as ideal hubs for pathogen colonization due to the prolonged environmental persistence and resistance to degradation of plastic surfaces. In addition, Shi et al. (2024) demonstrated that micro- and nanoplastics can influence ARG prevalence and transfer by reshaping microbial communities, increasing reactive oxygen species production, and enhancing bacterial cell membrane permeability—all of which contribute to a heightened risk of AMR dissemination compared to natural particles like POM.
+
+
+% \section{To-do}
+% \begin{itemize}
+    % \item Look at mutations, in what genes are they, what do they do? What the AMR Gene Family does I guess 
+    % \item Discuss your results, compare them with other findings, state whether the findings were surprising or not, if so, what could explain your observed patterns.
+% \end{itemize}
+
+
+% HDPE, PBSAA, PHA for AMR Gene Families
+% PBSA, PFP, PHBV for point mutations
+% The results from the random forest analysis show that one cannot easily distinguish the plastic samples from the nonplastic and water samples when grouped by the sample type.
+% However, there are mutations which are found to be significant when grouped by substrate and may therefore be used to identify which substrate a sample comes from.
+% One needs to be aware however that a high Mean Decrease of Gini Impurity does not mean that the mutation or AMR gene family has a higher abundance in the corresponding substrate, but only that the variable can be used to differentiate it. The actual abundance may be higher or lower than the reference group, the other substrates, but it does differ from the other substrates. \todo{It can also vary more or less than the reference? Find better reference to refer to}
+
+%It is possible to predict the identity of the substrates using the point mutations. This was done using the random forest algorithm which showed that among the plastic substrates, HDPE, PBSA, PHA, PFP, and PHBV has specific point mutations or AMR gene families which may be used to identify them.
+
+% OLD: 
+% \vspace{2 cm}
+% Based on the result in figures \ref{hits_type} and \ref{hits_substrate} we thus conclude that the number of point mutations which confer antibiotic resistance are not more prevalent on all plastics, but instead that specific plastic substrates increase this count.
+% These substrates include PFP, Ecovio, and BI-OPL. The latter two are biodegradable plastics which contain a blend of PBAT and PLA. 
+% 
+% On the other hand, in figures \ref{mean_genes_sampletype} and \ref{mean_genes_substrate}, the result is that the mean mutation percentage is higher for the plastic group when one compares the mean mutation percentage for specific mutations. 
+% 
+% The combination of these 
+% % seemingly diametrically opposed \todo{disparate? lmao eloquently spoken} 
+% results means that plastic seems to increases the mutation prevalence for specific genes, but as a general promotor of accumulation of antibiotic resistant mutations.
+% 
+% This claim is supported by the results shown in figure \ref{point_snps}, which show that there are mutations which are more prevalent on plastic substrates. However it may be noted that in this plot, the non-plastic substrates also exhibit a lot of mutations with a high mean mutation percentage, and that there are genes which are prevalent on all substrates.
+% 
+% The results from the random forest analysis show that one cannot easily distinguish the plastic samples from the nonplastic and water samples when grouped by the sample type.
+% However, there are mutations which are found to be significant when grouped by substrate and may therefore be used to identify which substrate a sample comes from.
+% One needs to be aware however that a high Mean Decrease of Gini Impurity does not mean that the mutation or AMR gene family has a higher abundance in the corresponding substrate, but only that the variable can be used to differentiate it. The actual abundance may be higher or lower than the reference group, the other substrates, but it does differ from the other substrates. \todo{It can also vary more or less than the reference? Find better reference to refer to}
 
 % This claim is supported by figures \ref{mean_genes_sampletype} and \ref{mean_genes_substrate}, in which the 
 

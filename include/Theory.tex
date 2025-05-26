@@ -1,2 +1,100 @@
 % CREATED BY MAGNUS GUSTAVER, 2020
-\chapter{Theory}
+\chapter{Theory/Background}
+
+% - sno källor ur introduction  of \cite{goswami2025MicroplasticsHiddenDrivers}
+% - se också 2.3
+% - många källor samma! Nästan alla metagenomic i table 1 har jag med.
+
+% Introduction:
+% Antibiotic resistance is one of the top threats to human health according to the WHO\cite{worldhealthorganization2023AntimicrobialResistance}, and bacterial antimicrobial resistance (AMR) is estimated to have caused 1.14 million deaths in 2021 \cite{naghavi2024GlobalBurdenBacterial}. 
+% It is estimated that by the year 2050, resistant infections could be associated \todo{note ASSOCIATED with, only 1.91 million attributable to} with more than 8 million deaths anually\cite{naghavi2024GlobalBurdenBacterial}.
+% 
+% Pathogens can confer antibiotic resistance by %horizontal gene transfer (HGT) or 
+% chromosomal mutations. 
+% Microplastics have been shown to enrich potentially pathogenic bacteria that carry a great number of antibiotic resistance genes (ARGs)\cite{liu2021MicroplasticsAreHotspot, wu2019SelectiveEnrichmentBacterial}.
+\todo{I feel like I have too little theory but I'm not sure what to include, what level to place it on. Include also: why point mutations? Why they are not studied more? Why antibiotic resistance is something good for the organims?}
+
+\section{The plastisphere}
+The plastisphere is a human-made ecosystem which consists of the microbial community which inhibit the surface of microplastics\cite{amaralzettler2020EcologyPlastisphere}. 
+Microplastics are synthetic particles or polymeric matrices with a diameter between one micrometer and five millimetres, however the lower limit of this range is disputed\cite{frias2019MicroplasticsFindingConsensus}.
+Approximately 5-13 million tonnes of plastic entered the ocean the year 2010, and is estimated to double by 2030\cite{amaralzettler2020EcologyPlastisphere}. In 2014 a total of 15-51 trillion microplastic particles was estimated to be present in the marine environment\cite{vansebille2015GlobalInventorySmall}.
+Microplastics has been shown to release additives and accumulate other pollutants, as well as help transport them, increasing the oxidative stress of the organisms in the biofilm. These pollutants include heavy metals such as chromium and cadmium\cite{forero-lopez2022PlastisphereMicroplasticsSitu}.
+The microbiome of the plastisphere is distinct from the microbiome of the surrounding water \cite{zadjelovic2023MicrobialHitchhikersHarbouring}, and has been shown to enrich ARGs compared to it\cite{zhou2024MicroplasticBiofilmsPromote}.
+
+\section{Antibiotic resistance databases}
+The antibiotic resistance database which is used in this study is release 4.0.0 of the the Comprehensive Antiobiotic Resistance Database (December 2024)\cite{alcock2023CARD2023Expanded}.
+The database consists of manually curated entries which are labelled with at least four mandatory classification tags, which include \emph{AMR Gene Family}, \emph{Drug Class}, \emph{Resistance Mechanism}, and \emph{Antibiotic}\cite{alcock2020CARD2020Antibiotic}. 
+The tag AMR Gene Family is of special interest, since it is the most granular of the tags and enables grouping of the point mutations based on their conferred resistance as well as the gene in which it is located, for example "rifampicin resistant rpoC". 
+CARD is well-suited to use when researching mutations conferring resistance, compared to the National Database of Antibiotic Resistant Organisms (NDARO)\cite{feldgarden2021AMRFinderPlusReferenceGene} which would be well-suited for comparing acquired resistance genes through HGT. Both CARD and NDARO contain information on both acquired resistance genes and AMR associated mutations. 
+\todo{Talk about how antibiotic resistance works, why is good for the organism?}
+% - mention what is in it
+% - Mention what is used
+% - Mention what AMR Gene Family is
+
+% \section{ARG Databases}
+% CARD good for this: \cite{papp2022ReviewComparisonAntimicrobial}
+% Contain list of snps.
+% Contain list of WT sequences.
+% Protein sequences listed.
+
+% Other databases? see \emph{papp2022ReviewComparisonAntimicrobial}?
+
+\section{Limitations and advantages of metagenomic data}
+% - Shotgun metagenomics
+%In order to detect the ARGs the metagenomic data was extracted, in their originals studies.
+Metagenomic data is commonly collected through shotgun sequencing, an untargeted sequencing of all microbial genomes in the sample\cite{quince2017ShotgunMetagenomicsSampling}.
+First, DNA is extracted from all the cells in the sample, then sheared into short DNA sequences called reads, which are then sequenced independently\cite{sharpton2014IntroductionAnalysisShotgun}. 
+This enables the study of both the taxonomy of the samples, since some reads will match to the 16S region, a taxonomically relevant loci in bacteria and archea, and some will match the coding sequences of the microorganisms in the sample. 
+The downside to this method is that it requires a large amount of data, since the metagenome of a sample is large and complex. 
+%This complicates the analysis and makes the sequencing more expensive, but these problems are reduced by advancements in sequencing and computing technology. 
+Metagenomic sequencing is preferred in this study rather than amplicon sequencing, which also extract the DNA from all cells of a sample but instead targets only a small taxonomically informative loci such as the 16S region in bacteria and archea. 
+%Metagenomic sequencing may be compared to amplicon sequencing, which also extract the DNA from all cells of a sample, but instead targets only a small taxonomically informative loci such as the 16S region in bacteria and archea. 
+It then amplifies the region using PCR, and therefore reduce the amount of sample needed for the analysis.
+The amplicon sequencing method is therefore more suitable for the analysis of the diversity of the sample, and not to study the specific point mutations present in the metagenome of a sample.
+
+%all the microbiomes are subject to untargeted sequencing
+
+% \cite{quince2017ShotgunMetagenomicsSampling}
+% High-throughput sequencing has enabled
+% Metagenomic data
+% - Shotgun sequencing
+  % "untargeted sequencing of all microbial genomes in a sample"
+  % can be used to profile taxonomic composition and functional potential of microbial communities
+
+% \cite{sharpton2014IntroductionAnalysisShotgun}
+% - Compare to amplicon, uses PCR -> has some biases associated with it
+    % - can produce varying estimates of diversity, different loci  have differential power at resolving taxa. 
+    % - typically only provides insight into taxonomic composition of the microbial community.
+% 
+% Shotgun: 
+% - DNA extracted from all cells in a sample
+% - all DNA is subsequently sheared into tiny fragments that are independently sequenced
+% - this results in DNA sequences (reads) that align to various genomic locations for the myriad genomes present in the sample, including non-microbes.
+% - Some of these reads will be sampled from taxonomically informative genomic loci (i.e. 16S), and others will be sampled from coding sequences that provide insight into the biological functions encoded in the genome.
+% - provides the opportunity to simultaneously explore two aspects of a microbial community: who is there and what are they capable of doing. 
+% 
+% Challenges:
+% - Relatively complex and large 
+  % -> require large amount of data to identify meaningful results. (MuMaMe authors recommend X to achieve X, add amount in result?) 
+% - May contain unwanted host DNA -> not a problem? microbiota
+% - while contamination is a challenge general to environmental sequecning studies, the identification and removal of metagenomic sequence contaminants is especially problematic. 
+  % -> For example, it can be difficult to determine which reads were generated from a detected contaminant's genome
+  % -> A metagenomic contaminant can mislead analyses of community genetic diversity if the contaminant's genome is enriched for genes taht are uncommon in the community
+% - Tend to be relatively expensive compared to amplicon
+
+% - Compare to amplicon sequencing, see \cite{sharpton2014IntroductionAnalysisShotgun} but OLD?
+
+
+% TODO: more in theory?
+%\section{Mutation detection methods}
+%There are multiple methods to detect mutations in metagenomic data, where one example is to
+% todo M: For theory I guess you can focus on mutation-detection methods, arg databases, limitation and advantages of metagenomic data in general
+% - Mutation detection methods
+%   - Shotgun metagenomics -> MuMaMe needs 
+% - ARG Databases
+% - Limitation and advantages of metagenomic data in general
+
+% 
+% Mumame (magesh2019)
+% Mumame is not aiming to find strain-level differences in taxonomic composition, thus enabling it to operate at much lower sequencing depths as complete coverage of the targeted genomes is not necessary for the analysis.Mumame is not aiming to find strain-level differences in taxonomic composition, thus enabling it to operate at much lower sequencing depths as complete coverage of the targeted genomes is not necessary for the analysis.Mumame is not aiming to find strain-level differences in taxonomic composition, thus enabling it to operate at much lower sequencing depths as complete coverage of the targeted genomes is not necessary for the analysis.
+% From figure 2B in it: the proportion of reads with mutation must be ~25% in order to be detected as significant

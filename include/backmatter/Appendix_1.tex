@@ -1,15 +1,443 @@
 % CREATED BY MAGNUS GUSTAVER, 2020
 \chapter{Appendix 1}
 \label{appendix:studies}
-\todo{Insert table with references to studies}
 % Format: ENA_accession - Name - Authors - Reference ?
+
+\begin{table}[]
+    \caption{Studies from which data was included. P = Plastisphere, W = Water, N = Non-plastic}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Accession    & Samples & Environment & Sampletypes & Year & Reference                                            \\ \midrule
+PRJNA886482  & 66      & Marine      & W, P, N     & 2024 & \cite{omura2024MicrobialDecompositionBiodegradable}  \\
+PRJNA1134258 & 83      & Wastewater  & W, P        & 2024 & \cite{2024PDFTaxonomicVariation}                     \\
+PRJEB52400   & 12      & Freshwater  & W, P        & 2023 & \cite{zadjelovic2023MicrobialHitchhikersHarbouring}  \\
+PRJNA807872  & 36      & Wastewater  & W, P        & 2022 & \cite{li2022PlastisphereShowingUnique}               \\
+PRJNA777294  & 44      & Marine      & W, P        & 2022 & \cite{bos2022TrackingGenomicCharacteristics}         \\
+PRJEB41132   & 16      & Marine      & W, P, N     & 2021 & \cite{bhagwat2021ExploringCompositionFunctions}      \\
+PRJNA318384  & 24      & Marine      & W, P        & 2016 & \cite{bryant2016DiversityActivityCommunitiesa}       \\
+PRJEB37023   & 12      & Marine      & P, N        & 2021 & \cite{oberbeckmann2021GenomicProteomicProfiles}      \\
+PRJEB15404   & 12      & Marine      & W, P        & 2019 & \cite{pinnell2019ShotgunMetagenomicsReveals}         \\
+PRJNA511822  & 5       & Freshwater  & W, P, N     & 2019 & \cite{wu2019SelectiveEnrichmentBacteriala}           \\
+PRJNA787583  & 12      & Soil        & N           & 2022 & \cite{ruthi2023PlastisphereMicrobiomeAlpine}         \\
+PRJNA756323  & 16      & Marine      & W, P        & 2022 & \cite{focardi2022PlasticLeachatesImpair}             \\
+PRJDB17400   & 9       & Freshwater  & W, P        & 2024 & \cite{guruge2024PlastiomePlastisphereenrichedMobile} \\
+PRJNA714465  & 9       & Freshwater  & W, P        & 2021 & \cite{wu2022IntegratedMetagenomicMetatranscriptomic} \\
+PRJNA984432  & 14      & Freshwater  & W, P        & 2023 & \cite{li2024EcologyRisksGlobal}                      \\
+PRJNA797856  & 25      & Freshwater  & W, P        & 2022 & \cite{li2022ViralDiversityPotential}                 \\ \bottomrule
+\end{tabular}
+\end{table}
 
 
 \chapter{Appendix 2}
-%\renewcommand{\arraystretch}{1.2}
-\todo{Split table to next page or decrease size of it in some way?}
+\label{appendix:samples}
+\begin{longtblr}[
+    caption = {Metadata of all samples}
+    ]{
+        colspec = {llllll},
+        rowhead = 1
+    }
+\toprule
+run\_accession & study\_accession & Substrate      & Latitude & Longitude & Ecosystem  \\ \midrule
+DRR528401     & PRJDB17400      & Undef. plastic & 35.834   & 139.607   & River      \\
+DRR528614     & PRJDB17400      & Freshwater     & 35.911   & 140.496   & River      \\
+DRR528402     & PRJDB17400      & Undef. plastic & 35.648   & 139.841   & Brackish   \\
+DRR528404     & PRJDB17400      & Undef. plastic & 35.745   & 140.860   & Ocean      \\
+DRR528613     & PRJDB17400      & Freshwater     & 35.648   & 139.841   & Brackish   \\
+DRR528403     & PRJDB17400      & Undef. plastic & 35.911   & 140.496   & River      \\
+DRR528405     & PRJDB17400      & Undef. plastic & 35.745   & 140.860   & Ocean      \\
+DRR528612     & PRJDB17400      & Freshwater     & 35.834   & 139.607   & River      \\
+DRR528615     & PRJDB17400      & Seawater       & 35.745   & 140.860   & Ocean      \\
+ERR1995201    & PRJEB15404      & PET            & 27.544   & -97.285   & Brackish   \\
+ERR1995202    & PRJEB15404      & PET            & 27.544   & -97.285   & Brackish   \\
+ERR1995206    & PRJEB15404      & Seawater       & 27.544   & -97.285   & Brackish   \\
+ERR1995157    & PRJEB15404      & PHA            & 27.544   & -97.285   & Brackish   \\
+ERR1995158    & PRJEB15404      & PHA            & 27.544   & -97.285   & Brackish   \\
+ERR1995199    & PRJEB15404      & Ceramic        & 27.544   & -97.285   & Brackish   \\
+ERR1995200    & PRJEB15404      & Ceramic        & 27.544   & -97.285   & Brackish   \\
+ERR1995203    & PRJEB15404      & PET            & 27.544   & -97.285   & Brackish   \\
+ERR1995204    & PRJEB15404      & Seawater       & 27.544   & -97.285   & Brackish   \\
+ERR1995156    & PRJEB15404      & PHA            & 27.544   & -97.285   & Brackish   \\
+ERR1995198    & PRJEB15404      & Ceramic        & 27.544   & -97.285   & Brackish   \\
+ERR1995205    & PRJEB15404      & Seawater       & 27.544   & -97.285   & Brackish   \\
+ERR3986765    & PRJEB37023      & Wood           & 54.146   & 11.843    & Brackish   \\
+ERR3987193    & PRJEB37023      & Wood           & 54.097   & 12.151    & Brackish   \\
+ERR3987232    & PRJEB37023      & PE             & 54.181   & 12.087    & Brackish   \\
+ERR3987275    & PRJEB37023      & PS             & 54.146   & 11.843    & Brackish   \\
+ERR3987276    & PRJEB37023      & PS             & 54.181   & 12.087    & Brackish   \\
+ERR3987103    & PRJEB37023      & Wood           & 54.106   & 12.096    & Brackish   \\
+ERR3987194    & PRJEB37023      & PE             & 54.146   & 11.843    & Brackish   \\
+ERR3987274    & PRJEB37023      & PE             & 54.097   & 12.151    & Brackish   \\
+ERR3987277    & PRJEB37023      & PS             & 54.106   & 12.096    & Brackish   \\
+ERR3986938    & PRJEB37023      & Wood           & 54.181   & 12.087    & Brackish   \\
+ERR3987233    & PRJEB37023      & PE             & 54.106   & 12.096    & Brackish   \\
+ERR3987278    & PRJEB37023      & PS             & 54.097   & 12.151    & Brackish   \\
+ERR4801149    & PRJEB41132      & PCL            & -33.084  & 151.522   & Brackish   \\
+ERR4801152    & PRJEB41132      & Wood           & -33.084  & 151.522   & Brackish   \\
+ERR4801155    & PRJEB41132      & Seawater       & -33.075  & 151.548   & Brackish   \\
+ERR4801158    & PRJEB41132      & PS             & -33.084  & 151.522   & Brackish   \\
+ERR4801161    & PRJEB41132      & PVC            & -33.084  & 151.522   & Brackish   \\
+ERR4801163    & PRJEB41132      & PVC            & -33.142  & 151.537   & Brackish   \\
+ERR4801148    & PRJEB41132      & PP             & -33.084  & 151.522   & Brackish   \\
+ERR4801150    & PRJEB41132      & PCL            & -32.998  & 151.586   & Brackish   \\
+ERR4801153    & PRJEB41132      & Wood           & -32.998  & 151.586   & Brackish   \\
+ERR4801154    & PRJEB41132      & Wood           & -33.142  & 151.537   & Brackish   \\
+ERR4801156    & PRJEB41132      & PP             & -32.998  & 151.586   & Brackish   \\
+ERR4801151    & PRJEB41132      & PCL            & -33.142  & 151.537   & Brackish   \\
+ERR4801157    & PRJEB41132      & PP             & -33.142  & 151.537   & Brackish   \\
+ERR4801159    & PRJEB41132      & PS             & -32.998  & 151.586   & Brackish   \\
+ERR4801160    & PRJEB41132      & PS             & -33.142  & 151.537   & Brackish   \\
+ERR4801162    & PRJEB41132      & PVC            & -32.998  & 151.586   & Brackish   \\
+ERR10466837   & PRJEB52400      & LDPE           & 52.355   & -1.514    & River      \\
+ERR10466841   & PRJEB52400      & LDPE           & 52.355   & -1.514    & River      \\
+ERR10466843   & PRJEB52400      & Freshwater     & 52.355   & -1.514    & River      \\
+ERR10466838   & PRJEB52400      & LDPE           & 52.355   & -1.514    & River      \\
+ERR10466842   & PRJEB52400      & Freshwater     & 52.355   & -1.514    & River      \\
+ERR10466844   & PRJEB52400      & Freshwater     & 52.355   & -1.514    & River      \\
+ERR10466833   & PRJEB52400      & Wood           & 52.355   & -1.514    & River      \\
+ERR10466834   & PRJEB52400      & Wood           & 52.355   & -1.514    & River      \\
+ERR10466835   & PRJEB52400      & Wood           & 52.355   & -1.514    & River      \\
+ERR10466836   & PRJEB52400      & LDPE           & 52.355   & -1.514    & River      \\
+ERR10466839   & PRJEB52400      & LDPE           & 52.355   & -1.514    & River      \\
+ERR10466840   & PRJEB52400      & LDPE           & 52.355   & -1.514    & River      \\
+SRR29811038   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811039   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811040   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811041   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811042   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811043   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811044   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811045   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811050   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811055   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811056   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811058   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811060   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811063   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811064   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811068   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811072   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811074   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811076   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811081   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811084   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811090   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811094   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811098   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811099   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811101   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811102   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811103   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811107   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811110   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811111   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811112   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811119   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811120   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811048   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811051   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811054   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811059   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811061   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811065   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811066   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811067   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811069   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811071   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811079   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811080   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811083   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811088   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811089   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811091   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811093   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811100   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811104   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811106   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811109   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811114   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811116   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811117   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811118   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811046   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811047   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811049   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811052   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811053   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811057   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811062   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811070   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811073   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811075   & PRJNA1134258    & PET            & -43.532  & 172.722   & Wastewater \\
+SRR29811077   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811078   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811082   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811085   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811086   & PRJNA1134258    & Wastewater     & -43.532  & 172.722   & Wastewater \\
+SRR29811087   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811092   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811095   & PRJNA1134258    & OXO            & -43.532  & 172.722   & Wastewater \\
+SRR29811096   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811097   & PRJNA1134258    & PLA            & -43.532  & 172.722   & Wastewater \\
+SRR29811105   & PRJNA1134258    & PA             & -43.532  & 172.722   & Wastewater \\
+SRR29811108   & PRJNA1134258    & LLDPE          & -43.532  & 172.722   & Wastewater \\
+SRR29811113   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR29811115   & PRJNA1134258    & Glass          & -43.532  & 172.722   & Wastewater \\
+SRR3401469    & PRJNA318384     & Undef. plastic & 27.730   & -154.898  & Ocean      \\
+SRR3401471    & PRJNA318384     & Undef. plastic & 31.991   & -153.058  & Ocean      \\
+SRR3401472    & PRJNA318384     & Undef. plastic & 31.991   & -153.058  & Ocean      \\
+SRR3401474    & PRJNA318384     & Undef. plastic & 34.928   & -148.030  & Ocean      \\
+SRR3401477    & PRJNA318384     & Undef. plastic & 35.423   & -139.250  & Ocean      \\
+SRR3401478    & PRJNA318384     & Undef. plastic & 35.423   & -139.250  & Ocean      \\
+SRR3401480    & PRJNA318384     & Undef. plastic & 35.439   & -138.264  & Ocean      \\
+SRR3401483    & PRJNA318384     & Undef. plastic & 31.991   & -153.058  & Ocean      \\
+SRR3401490    & PRJNA318384     & Undef. plastic & 35.423   & -139.250  & Ocean      \\
+SRR3401492    & PRJNA318384     & Undef. plastic & 35.439   & -138.264  & Ocean      \\
+SRR3401481    & PRJNA318384     & Undef. plastic & 27.730   & -154.898  & Ocean      \\
+SRR3401486    & PRJNA318384     & Undef. plastic & 34.928   & -148.030  & Ocean      \\
+SRR3401470    & PRJNA318384     & Undef. plastic & 27.730   & -154.898  & Ocean      \\
+SRR3401487    & PRJNA318384     & Undef. plastic & 35.034   & -146.810  & Ocean      \\
+SRR3401473    & PRJNA318384     & Undef. plastic & 34.928   & -148.030  & Ocean      \\
+SRR3401475    & PRJNA318384     & Undef. plastic & 35.034   & -146.810  & Ocean      \\
+SRR3401488    & PRJNA318384     & Undef. plastic & 35.034   & -146.810  & Ocean      \\
+SRR3401476    & PRJNA318384     & Undef. plastic & 35.034   & -146.810  & Ocean      \\
+SRR3401489    & PRJNA318384     & Undef. plastic & 35.423   & -139.250  & Ocean      \\
+SRR3401491    & PRJNA318384     & Undef. plastic & 35.439   & -138.264  & Ocean      \\
+SRR3401479    & PRJNA318384     & Undef. plastic & 35.439   & -138.264  & Ocean      \\
+SRR3401482    & PRJNA318384     & Undef. plastic & 27.730   & -154.898  & Ocean      \\
+SRR3401484    & PRJNA318384     & Undef. plastic & 31.991   & -153.058  & Ocean      \\
+SRR3401485    & PRJNA318384     & Undef. plastic & 34.928   & -148.030  & Ocean      \\
+SRR8369860    & PRJNA511822     & Freshwater     & 39.080   & 117.262   & River      \\
+SRR8369862    & PRJNA511822     & PVC            & 39.080   & 117.262   & River      \\
+SRR8369863    & PRJNA511822     & Rock           & 39.080   & 117.262   & River      \\
+SRR8369861    & PRJNA511822     & Leaf           & 39.080   & 117.262   & River      \\
+SRR8369859    & PRJNA511822     & Freshwater     & 39.080   & 117.262   & River      \\
+SRR14061753   & PRJNA714465     & Freshwater     & 39.080   & 117.262   & River      \\
+SRR14061755   & PRJNA714465     & PVC            & 39.080   & 117.262   & River      \\
+SRR14061758   & PRJNA714465     & PLA            & 39.080   & 117.262   & River      \\
+SRR14061759   & PRJNA714465     & PLA            & 39.080   & 117.262   & River      \\
+SRR14061752   & PRJNA714465     & Freshwater     & 39.080   & 117.262   & River      \\
+SRR14061760   & PRJNA714465     & PLA            & 39.080   & 117.262   & River      \\
+SRR14061754   & PRJNA714465     & Freshwater     & 39.080   & 117.262   & River      \\
+SRR14061756   & PRJNA714465     & PVC            & 39.080   & 117.262   & River      \\
+SRR14061757   & PRJNA714465     & PVC            & 39.080   & 117.262   & River      \\
+SRR15530465   & PRJNA756323     & PVC            & -34.116  & 151.219   & Ocean      \\
+SRR15530466   & PRJNA756323     & Seawater       & -34.116  & 151.219   & Ocean      \\
+SRR15530469   & PRJNA756323     & PVC            & -34.116  & 151.219   & Ocean      \\
+SRR15530472   & PRJNA756323     & Zn             & -34.116  & 151.219   & Ocean      \\
+SRR15530473   & PRJNA756323     & Zn             & -34.116  & 151.219   & Ocean      \\
+SRR15530478   & PRJNA756323     & Zn             & -34.116  & 151.219   & Ocean      \\
+SRR15530468   & PRJNA756323     & Zn             & -34.116  & 151.219   & Ocean      \\
+SRR15530470   & PRJNA756323     & PVC            & -34.116  & 151.219   & Ocean      \\
+SRR15530474   & PRJNA756323     & PVC            & -34.116  & 151.219   & Ocean      \\
+SRR15530480   & PRJNA756323     & Seawater       & -34.116  & 151.219   & Ocean      \\
+SRR15530467   & PRJNA756323     & PVC            & -34.116  & 151.219   & Ocean      \\
+SRR15530471   & PRJNA756323     & Zn             & -34.116  & 151.219   & Ocean      \\
+SRR15530475   & PRJNA756323     & PVC            & -34.116  & 151.219   & Ocean      \\
+SRR15530476   & PRJNA756323     & Seawater       & -34.116  & 151.219   & Ocean      \\
+SRR15530477   & PRJNA756323     & Zn             & -34.116  & 151.219   & Ocean      \\
+SRR15530479   & PRJNA756323     & PVC            & -34.116  & 151.219   & Ocean      \\
+SRR17458606   & PRJNA777294     & HDPE           & 25.860   & -69.990   & Ocean      \\
+SRR17458610   & PRJNA777294     & PHA            & 38.580   & -76.420   & Brackish   \\
+SRR17458614   & PRJNA777294     & PP             & 37.890   & -76.170   & Brackish   \\
+SRR17458619   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458620   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458621   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458630   & PRJNA777294     & PP             & 24.950   & -66.350   & Ocean      \\
+SRR17458634   & PRJNA777294     & PE             & 25.890   & -69.880   & Ocean      \\
+SRR17458646   & PRJNA777294     & PE             & 30.690   & -79.780   & Ocean      \\
+SRR17458603   & PRJNA777294     & PS             & 27.060   & -79.950   & Ocean      \\
+SRR17458604   & PRJNA777294     & Seawater       & 33.760   & -76.550   & Ocean      \\
+SRR17458607   & PRJNA777294     & PP             & 31.180   & -79.500   & Ocean      \\
+SRR17458609   & PRJNA777294     & PE             & 26.730   & -79.890   & Ocean      \\
+SRR17458611   & PRJNA777294     & PHA            & 37.890   & -76.130   & Brackish   \\
+SRR17458613   & PRJNA777294     & PE             & 26.730   & -79.890   & Ocean      \\
+SRR17458615   & PRJNA777294     & PHA            & 22.560   & -63.730   & Ocean      \\
+SRR17458616   & PRJNA777294     & PS             & 22.560   & -63.730   & Ocean      \\
+SRR17458617   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458623   & PRJNA777294     & PE             & 31.180   & -79.500   & Ocean      \\
+SRR17458624   & PRJNA777294     & Seawater       & 36.900   & -75.930   & Ocean      \\
+SRR17458626   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458627   & PRJNA777294     & HDPE           & 24.430   & -65.550   & Ocean      \\
+SRR17458628   & PRJNA777294     & Wood           & 37.890   & -76.170   & Brackish   \\
+SRR17458632   & PRJNA777294     & PE             & 24.950   & -66.350   & Ocean      \\
+SRR17458636   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458638   & PRJNA777294     & PMMA           & 36.040   & -75.520   & Ocean      \\
+SRR17458639   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458643   & PRJNA777294     & PE             & 33.450   & -76.890   & Ocean      \\
+SRR17458645   & PRJNA777294     & PE             & 25.890   & -69.880   & Ocean      \\
+SRR17458605   & PRJNA777294     & PE             & 31.180   & -79.500   & Ocean      \\
+SRR17458608   & PRJNA777294     & PP             & 26.730   & -79.890   & Ocean      \\
+SRR17458612   & PRJNA777294     & PE             & 25.890   & -69.880   & Ocean      \\
+SRR17458618   & PRJNA777294     & Wood           & 37.890   & -76.170   & Brackish   \\
+SRR17458622   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458625   & PRJNA777294     & Cardboard      & 37.890   & -76.170   & Brackish   \\
+SRR17458629   & PRJNA777294     & PHA            & 36.900   & -75.930   & Ocean      \\
+SRR17458631   & PRJNA777294     & PHA            & 36.100   & -75.500   & Ocean      \\
+SRR17458633   & PRJNA777294     & Seawater       & 31.160   & -79.520   & Ocean      \\
+SRR17458635   & PRJNA777294     & HDPE           & 22.560   & -63.730   & Ocean      \\
+SRR17458637   & PRJNA777294     & PP             & 36.040   & -75.520   & Ocean      \\
+SRR17458640   & PRJNA777294     & PE             & 33.690   & -76.620   & Ocean      \\
+SRR17458641   & PRJNA777294     & Seawater       & 27.060   & -79.950   & Ocean      \\
+SRR17458642   & PRJNA777294     & PE             & 33.690   & -76.620   & Ocean      \\
+SRR17458644   & PRJNA777294     & PE             & 33.450   & -76.890   & Ocean      \\
+SRR17331969   & PRJNA787583     & PE             & 46.496   & 9.931     & Soil       \\
+SRR17331971   & PRJNA787583     & BI-OPL         & 46.496   & 9.931     & Soil       \\
+SRR17331974   & PRJNA787583     & Ecovio         & 46.496   & 9.931     & Soil       \\
+SRR17331976   & PRJNA787583     & Soil           & 46.496   & 9.931     & Soil       \\
+SRR17331977   & PRJNA787583     & PE             & 46.496   & 9.931     & Soil       \\
+SRR17331970   & PRJNA787583     & BI-OPL         & 46.496   & 9.931     & Soil       \\
+SRR17331972   & PRJNA787583     & BI-OPL         & 46.496   & 9.931     & Soil       \\
+SRR17331979   & PRJNA787583     & Soil           & 46.496   & 9.931     & Soil       \\
+SRR17331973   & PRJNA787583     & Ecovio         & 46.496   & 9.931     & Soil       \\
+SRR17331975   & PRJNA787583     & Ecovio         & 46.496   & 9.931     & Soil       \\
+SRR17331978   & PRJNA787583     & PE             & 46.496   & 9.931     & Soil       \\
+SRR17331980   & PRJNA787583     & Soil           & 46.496   & 9.931     & Soil       \\
+SRR17656790   & PRJNA797856     & PF             & 21.540   & 107.976   & River      \\
+SRR17656800   & PRJNA797856     & PS             & 21.746   & 107.764   & River      \\
+SRR17656807   & PRJNA797856     & PFP            & 21.547   & 107.999   & River      \\
+SRR17656808   & PRJNA797856     & PFP            & 21.540   & 107.976   & River      \\
+SRR17656809   & PRJNA797856     & PFP            & 21.640   & 107.878   & River      \\
+SRR17656812   & PRJNA797856     & PE             & 21.649   & 107.831   & River      \\
+SRR17656794   & PRJNA797856     & PE             & 21.547   & 107.999   & River      \\
+SRR17656801   & PRJNA797856     & PE             & 21.640   & 107.878   & River      \\
+SRR17656805   & PRJNA797856     & PP             & 21.649   & 107.831   & River      \\
+SRR17656789   & PRJNA797856     & PF             & 21.547   & 107.999   & River      \\
+SRR17656791   & PRJNA797856     & PF             & 21.640   & 107.878   & River      \\
+SRR17656792   & PRJNA797856     & PF             & 21.649   & 107.831   & River      \\
+SRR17656793   & PRJNA797856     & PF             & 21.746   & 107.764   & River      \\
+SRR17656795   & PRJNA797856     & PE             & 21.540   & 107.976   & River      \\
+SRR17656796   & PRJNA797856     & PS             & 21.547   & 107.999   & River      \\
+SRR17656797   & PRJNA797856     & PS             & 21.540   & 107.976   & River      \\
+SRR17656798   & PRJNA797856     & PS             & 21.640   & 107.878   & River      \\
+SRR17656799   & PRJNA797856     & PS             & 21.649   & 107.831   & River      \\
+SRR17656802   & PRJNA797856     & PP             & 21.547   & 107.999   & River      \\
+SRR17656803   & PRJNA797856     & PP             & 21.540   & 107.976   & River      \\
+SRR17656804   & PRJNA797856     & PP             & 21.640   & 107.878   & River      \\
+SRR17656806   & PRJNA797856     & PP             & 21.746   & 107.764   & River      \\
+SRR17656810   & PRJNA797856     & PFP            & 21.649   & 107.831   & River      \\
+SRR17656811   & PRJNA797856     & PFP            & 21.746   & 107.764   & River      \\
+SRR17656813   & PRJNA797856     & PE             & 21.746   & 107.764   & River      \\
+SRR18313612   & PRJNA807872     & Wastewater     & 22.520   & 113.910   & Wastewater \\
+SRR18313614   & PRJNA807872     & Wastewater     & 22.520   & 113.910   & Wastewater \\
+SRR18313616   & PRJNA807872     & Wastewater     & 22.520   & 113.910   & Wastewater \\
+SRR18313623   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313624   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313630   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313631   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313632   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313633   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313638   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313639   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313643   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313645   & PRJNA807872     & Wastewater     & 22.520   & 113.910   & Wastewater \\
+SRR18313647   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313613   & PRJNA807872     & Wastewater     & 22.520   & 113.910   & Wastewater \\
+SRR18313615   & PRJNA807872     & Wastewater     & 22.520   & 113.910   & Wastewater \\
+SRR18313618   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313619   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313617   & PRJNA807872     & Wastewater     & 22.520   & 113.910   & Wastewater \\
+SRR18313621   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313620   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313625   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313622   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313626   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313627   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313635   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313636   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313641   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313642   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313628   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313629   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313634   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313637   & PRJNA807872     & ActiveSludge   & 22.520   & 113.910   & Wastewater \\
+SRR18313640   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR18313644   & PRJNA807872     & Wastewater     & 22.520   & 113.910   & Wastewater \\
+SRR18313646   & PRJNA807872     & PVC            & 22.520   & 113.910   & Wastewater \\
+SRR26541421   & PRJNA886482     & PET            & 35.320   & 139.651   & Brackish   \\
+SRR26541422   & PRJNA886482     & PLLA           & 35.320   & 139.651   & Brackish   \\
+SRR26541423   & PRJNA886482     & PBAT           & 35.320   & 139.651   & Brackish   \\
+SRR26541424   & PRJNA886482     & PP             & 22.999   & 154.409   & Ocean      \\
+SRR26541426   & PRJNA886482     & PE             & 22.999   & 154.409   & Ocean      \\
+SRR26541433   & PRJNA886482     & PCL            & 35.320   & 139.651   & Brackish   \\
+SRR26541440   & PRJNA886482     & PET            & 35.016   & 139.222   & Ocean      \\
+SRR26541445   & PRJNA886482     & PBSA           & 35.016   & 139.222   & Ocean      \\
+SRR26541453   & PRJNA886482     & PLLA           & 35.016   & 139.222   & Ocean      \\
+SRR26541458   & PRJNA886482     & PBSA           & 35.016   & 139.222   & Ocean      \\
+SRR26541459   & PRJNA886482     & P3HB4HB        & 35.016   & 139.222   & Ocean      \\
+SRR26541461   & PRJNA886482     & PHBV           & 35.016   & 139.222   & Ocean      \\
+SRR26541464   & PRJNA886482     & PS             & 35.320   & 139.651   & Brackish   \\
+SRR26541465   & PRJNA886482     & PE             & 35.320   & 139.651   & Brackish   \\
+SRR26541466   & PRJNA886482     & PHBH           & 35.320   & 139.651   & Brackish   \\
+SRR26541467   & PRJNA886482     & PLLA           & 35.320   & 139.651   & Brackish   \\
+SRR26541468   & PRJNA886482     & PBAT           & 35.320   & 139.651   & Brackish   \\
+SRR26541469   & PRJNA886482     & PCL            & 35.320   & 139.651   & Brackish   \\
+SRR26541473   & PRJNA886482     & PHBV           & 35.320   & 139.651   & Brackish   \\
+SRR26541476   & PRJNA886482     & PS             & 35.320   & 139.651   & Brackish   \\
+SRR26541478   & PRJNA886482     & PHB            & 35.320   & 139.651   & Brackish   \\
+SRR26549051   & PRJNA886482     & Seawater       & 35.016   & 139.222   & Ocean      \\
+SRR26541425   & PRJNA886482     & PS             & 22.999   & 154.409   & Ocean      \\
+SRR26541427   & PRJNA886482     & PET            & 22.999   & 154.409   & Ocean      \\
+SRR26541429   & PRJNA886482     & PBAT           & 22.999   & 154.409   & Ocean      \\
+SRR26541430   & PRJNA886482     & PCL            & 22.999   & 154.409   & Ocean      \\
+SRR26541436   & PRJNA886482     & PHB            & 22.999   & 154.409   & Ocean      \\
+SRR26541437   & PRJNA886482     & PP             & 35.016   & 139.222   & Ocean      \\
+SRR26541439   & PRJNA886482     & PE             & 35.016   & 139.222   & Ocean      \\
+SRR26541442   & PRJNA886482     & PBAT           & 35.016   & 139.222   & Ocean      \\
+SRR26541444   & PRJNA886482     & PBSA           & 35.320   & 139.651   & Brackish   \\
+SRR26541447   & PRJNA886482     & PHBH           & 35.016   & 139.222   & Ocean      \\
+SRR26541448   & PRJNA886482     & PHBV           & 35.016   & 139.222   & Ocean      \\
+SRR26541449   & PRJNA886482     & PHB            & 35.016   & 139.222   & Ocean      \\
+SRR26541450   & PRJNA886482     & PP             & 35.016   & 139.222   & Ocean      \\
+SRR26541457   & PRJNA886482     & PCL            & 35.016   & 139.222   & Ocean      \\
+SRR26541463   & PRJNA886482     & PP             & 35.320   & 139.651   & Brackish   \\
+SRR26541475   & PRJNA886482     & PP             & 35.320   & 139.651   & Brackish   \\
+SRR26549047   & PRJNA886482     & Sediment       & 35.016   & 139.222   & Ocean      \\
+SRR26549048   & PRJNA886482     & Sediment       & 35.016   & 139.222   & Ocean      \\
+SRR26549049   & PRJNA886482     & Sediment       & 35.016   & 139.222   & Ocean      \\
+SRR26541420   & PRJNA886482     & PE             & 35.320   & 139.651   & Brackish   \\
+SRR26541428   & PRJNA886482     & PLLA           & 22.999   & 154.409   & Ocean      \\
+SRR26541431   & PRJNA886482     & PBSA           & 22.999   & 154.409   & Ocean      \\
+SRR26541432   & PRJNA886482     & P3HB4HB        & 22.999   & 154.409   & Ocean      \\
+SRR26541434   & PRJNA886482     & PHBH           & 22.999   & 154.409   & Ocean      \\
+SRR26541435   & PRJNA886482     & PHBV           & 22.999   & 154.409   & Ocean      \\
+SRR26541438   & PRJNA886482     & PS             & 35.016   & 139.222   & Ocean      \\
+SRR26541441   & PRJNA886482     & PLLA           & 35.016   & 139.222   & Ocean      \\
+SRR26541443   & PRJNA886482     & PCL            & 35.016   & 139.222   & Ocean      \\
+SRR26541446   & PRJNA886482     & P3HB4HB        & 35.016   & 139.222   & Ocean      \\
+SRR26541451   & PRJNA886482     & PS             & 35.016   & 139.222   & Ocean      \\
+SRR26541452   & PRJNA886482     & PE             & 35.016   & 139.222   & Ocean      \\
+SRR26541454   & PRJNA886482     & PET            & 35.016   & 139.222   & Ocean      \\
+SRR26541455   & PRJNA886482     & P3HB4HB        & 35.320   & 139.651   & Brackish   \\
+SRR26541456   & PRJNA886482     & PBAT           & 35.016   & 139.222   & Ocean      \\
+SRR26541460   & PRJNA886482     & PHBH           & 35.016   & 139.222   & Ocean      \\
+SRR26541462   & PRJNA886482     & PHB            & 35.016   & 139.222   & Ocean      \\
+SRR26541470   & PRJNA886482     & PBSA           & 35.320   & 139.651   & Brackish   \\
+SRR26541471   & PRJNA886482     & P3HB4HB        & 35.320   & 139.651   & Brackish   \\
+SRR26541472   & PRJNA886482     & PHBH           & 35.320   & 139.651   & Brackish   \\
+SRR26541474   & PRJNA886482     & PHB            & 35.320   & 139.651   & Brackish   \\
+SRR26541477   & PRJNA886482     & PHBV           & 35.320   & 139.651   & Brackish   \\
+SRR26549046   & PRJNA886482     & Sediment       & 35.016   & 139.222   & Ocean      \\
+SRR26549050   & PRJNA886482     & Sediment       & 35.016   & 139.222   & Ocean      \\
+SRR26549052   & PRJNA886482     & Seawater       & 35.016   & 139.222   & Ocean      \\
+SRR24947108   & PRJNA984432     & Undef. plastic & 36.255   & 120.315   & Brackish   \\
+SRR24947111   & PRJNA984432     & Seawater       & 36.255   & 120.315   & Brackish   \\
+SRR24947113   & PRJNA984432     & Seawater       & 36.255   & 120.315   & Brackish   \\
+SRR24947116   & PRJNA984432     & Undef. plastic & 36.255   & 120.315   & Brackish   \\
+SRR24947117   & PRJNA984432     & Undef. plastic & 36.255   & 120.315   & Brackish   \\
+SRR24947118   & PRJNA984432     & Undef. plastic & 36.255   & 120.315   & Brackish   \\
+SRR24947107   & PRJNA984432     & Undef. plastic & 36.255   & 120.315   & Brackish   \\
+SRR24947109   & PRJNA984432     & Undef. plastic & 36.255   & 120.315   & Brackish   \\
+SRR24947119   & PRJNA984432     & Seawater       & 36.255   & 120.315   & Brackish   \\
+SRR24947120   & PRJNA984432     & Seawater       & 36.255   & 120.315   & Brackish   \\
+SRR24947110   & PRJNA984432     & Seawater       & 36.255   & 120.315   & Brackish   \\
+SRR24947112   & PRJNA984432     & Seawater       & 36.255   & 120.315   & Brackish   \\
+SRR24947114   & PRJNA984432     & Seawater       & 36.255   & 120.315   & Brackish   \\
+SRR24947115   & PRJNA984432     & Undef. plastic & 36.255   & 120.315   & Brackish   \\ \bottomrule
+\end{longtblr}
 
 
+\chapter{Appendix 3}
+\vspace{-1cm}
 \begin{table}[H]
 \caption{Number of samples for each substrate type}
 \label{substrate_sampletype}
@@ -44,8 +472,8 @@
                               & Undefined plastic  & 24         \\ \midrule
 \multirow{3}{*}{Water}        & Freshwater         & 11         \\
                               & Seawater           & 21         \\
-                              & Wastewater         & 20         \\
-\multirow{10}{*}{Non-plastic} & ActivatedSludge    & 14         \\ \midrule
+                              & Wastewater         & 20         \\  \midrule
+\multirow{10}{*}{Non-plastic} & ActivatedSludge    & 14         \\
                               & Cardboard          & 1          \\
                               & Ceramic            & 3          \\
                               & Glass              & 11         \\
@@ -57,3 +485,22 @@
                               & Zn                 & 6          \\ \bottomrule
 \end{tabular}
 \end{table}
+
+\chapter{Appendix 4}
+\label{appendix:tax}
+\todo{Add better caption?}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 1.05\textheight, angle = 90]{figure/tax_phylum_ecosystem_sampletype_substrate.png}
+    \caption{Taxonomic composition for all samples showing the top 8 phyla, divided by ecosystem type, sampletype, and substrate}
+    \label{tax_plot_substrate_flip}
+\end{figure}
+
+\chapter{Appendix 5}
+\label{appendix:top50amr}
+\todo{Add figures showing top 50 significant AMR Gene Families and mutations}
+
+\chapter{Appendix 5}
+\label{appendix:code}
+\todo{Add code, insert pdf of notebook}
+
