@@ -1,0 +1,18 @@
+# Auxiliary files from latex
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.files
+*.lof
+*.log
+*.log
+*.lot
+*.out
+*.gz
+*.toc
+
+# Output files
+*.pdf
+README.txt
