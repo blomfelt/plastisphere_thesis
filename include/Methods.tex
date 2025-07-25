@@ -44,7 +44,7 @@
 % Options? in brackets?
 
 \section{Data Processing}
-The studies containing the metagenomic data used in this study were identified in the Nucleotide database of the National Center for Biotechnology Information using the search terms "shotgun metagenomics plastisphere microbiome", "(plastisphere metagenome shotgun) NOT MAG", and "txid1342751[Organism:noexp] NOT 16S NOT amplicon". The BioProject accession number was then used to download the metagenomic data from each dataset from the European Nucleotide Archive (ENA) at EMBL-EBI \cite{embl-ebi2025ENABrowser}. 
+The studies containing the metagenomic data used in this study were identified in the Nucleotide database of the National Center for Biotechnology Information using the search terms \emph{"shotgun metagenomics plastisphere microbiome", "(plastisphere metagenome shotgun) NOT MAG"}, and \emph{"txid1342751[Organism:noexp] NOT 16S NOT amplicon"}. The BioProject accession number was then used to download the metagenomic data from each dataset from the European Nucleotide Archive (ENA) at EMBL-EBI \cite{embl-ebi2025ENABrowser}. 
 
 Only studies that analysed the metagenome in plastic and water substrates, and published their data in the ENA, were included. Some of them studied non-plastic substrates, however this was not a requirement for inclusion. Studies analysing wastewater were included in order to include samples which should be distinctly different from the water samples, since previous studies have shown that wastewater contributes to antimicrobial resistance \cite{sambaza2023ContributionWastewaterAntimicrobial}.
 
@@ -88,7 +88,7 @@ The mean amount of reads were approximately 25 million for the plastic group and
 
 
 After the trimming and filtering step, the remaining reads were annotated using MetaxaQR (v. 3.0 b3) \cite{bengtsson-palme2015Metaxa2Improved}. This tool screens the input sequences for conserved regions of the SSU/LSU gene using hidden Markov models. These models are based on rRNA sequences from the SILVA database \cite{quast2012SILVARibosomalRNA}.
-    A search using vmatch \cite{kurtzVmatchLargeScale} is then done on the sequences which are found to contain rRNA genes, against a specialized database crafted by the creators of MetaxaQR from release 138 of the SILVA database \cite{bengtsson-palmeMetaxaQRFAQMicrobiologyse}.% and release ten of Mitozoa\cite{donoriodemeo2012MitoZoa20Database}.
+    A search using vmatch \cite{kurtzVmatchLargeScale} was then done on the sequences which are found to contain rRNA genes, against a specialized database crafted by the creators of MetaxaQR from release 138 of the SILVA database \cite{bengtsson-palmeMetaxaQRFAQMicrobiologyse}.% and release ten of Mitozoa\cite{donoriodemeo2012MitoZoa20Database}.
 The taxonomic annotations are then collected by MetaxaQR Taxonomic Traversal Tool and MetaxaQR Data Collector, which finally outputs one large abundance matrix containing the results from all samples down to the genus level. 
 
 In order to idenify the point mutations present in the samples, the tool MuMaMe (v. 1.0b) \cite{magesh2019MumameSoftwareTool} was used. MuMaMe consists of two tools, MuMaMe\_build and MuMaMe. 
